@@ -1,0 +1,37 @@
+#color-palette {
+  margin-top: 40px;
+  padding: 40px;
+  margin: auto;
+}
+
+.color {
+  border: 1px solid black;
+  padding: 30px;
+  margin: 5px;
+  display: inline-block;
+}
+
+.c1 {
+  background-color: black;
+}
+
+.c2 {
+  background-color: blue;
+}
+
+.c3 {
+  background-color: green;
+}
+
+.c4 {
+  background-color: orange;
+}
+
+.pixel {
+  display: inline-block;
+  background-color: white;
+  padding: 39px;
+  border: 1px solid black;
+  margin-left: 1px;  
+}
+
