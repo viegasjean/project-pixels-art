@@ -8,11 +8,12 @@ body.appendChild(title);
 
 // Cria e Adiciona Sessão Paleta
 const pallete = document.createElement('section')
+pallete.id = 'color-palette'
 body.appendChild(pallete)
 
 //Cria botão limpar
 const clearBoard =  document.createElement('button')
-clearBoard.className = 'clear-board'
+clearBoard.id = 'clear-board'
 clearBoard.innerText = 'Limpar'
 clearBoard.addEventListener('click', paintWhite)
 body.appendChild(clearBoard)

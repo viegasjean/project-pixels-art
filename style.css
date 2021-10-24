@@ -11,27 +11,15 @@
   display: inline-block;
 }
 
-.c1 {
-  background-color: black;
-}
-
-.c2 {
-  background-color: blue;
-}
-
-.c3 {
-  background-color: green;
-}
-
-.c4 {
-  background-color: orange;
-}
-
 .pixel {
   display: inline-block;
   background-color: white;
-  padding: 39px;
+  height: 40px;
+  width: 40px;
   border: 1px solid black;
-  margin-left: 1px;  
 }
 
+.line {
+  height: 40px;
+
+}
