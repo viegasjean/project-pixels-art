@@ -11,7 +11,39 @@ const pallete = document.createElement('section');
 pallete.id = 'color-palette';
 body.appendChild(pallete);
 
-//Cria botão limpar
+// Cria Input e botão com funcão de criar quadro de pixels com valor digitado
+const boardSize = document.createElement('input');
+boardSize.id = 'board-size';
+boardSize.type = 'number';
+boardSize.min = '1';
+body.appendChild(boardSize)
+const generateBoard = document.createElement('button');
+generateBoard.id = 'generate-board';
+generateBoard.innerText = 'VQV'
+generateBoard.addEventListener('click', ()=>{
+  if (boardSize.value == ''){
+    alert('Board inválido!')
+  } else {
+    n = boardSize.value;
+    
+    if (boardSize.value < 5){
+      n = 5;  
+    } else if (boardSize.value > 50){
+      n = 50;  
+    }
+  
+    pixelBoard.innerText = ''
+
+    for (let i = 1; i <= n; i += 1) {
+      pixelBoard.appendChild(createLine());
+    }
+    insertPixel()
+  }
+  }
+)
+body.appendChild(generateBoard)
+
+// Cria botão limpar
 const clearBoard = document.createElement('button');
 clearBoard.id = 'clear-board';
 clearBoard.innerText = 'Limpar';
@@ -23,8 +55,19 @@ const pixelBoard = document.createElement('section');
 pixelBoard.id = 'pixel-board';
 body.appendChild(pixelBoard);
 
-const n = 5; // Tamanho do Quadro de Pixels
-const colors = ["black", 'red', 'orange', 'pink']; // Define cores da Paleta
+let n = 5; // Tamanho do Quadro de Pixels
+
+// Função para gerar cor aleatoria
+function gerarCor() {
+  let r = Math.random() * 255;
+  let g = Math.random() * 255;
+  let b = Math.random() * 255;
+  
+  return `rgba(${r}, ${g}, ${b})`;
+}
+
+const colors = ['black', gerarCor(), gerarCor(), gerarCor()]; // Define cores da Paleta
+
 let selectedColor = colors[0]; // cor inicial
 
 // Prennche Paleta
@@ -82,6 +125,7 @@ function insertPixel() {
     }
   }
 }
+
 insertPixel();
 
 function paintWhite() {
